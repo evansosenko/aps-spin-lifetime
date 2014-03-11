@@ -1,0 +1,12 @@
+{
+  "name": "aps-spin-lifetime",
+  "version": "0.0.0",
+  "authors": [
+    "Evan Sosenko <razorx@evansosenko.com>"
+  ],
+  "license": "Copyright 2014 Evan Sosenko",
+  "private": true,
+  "dependencies": {
+    "references": "https://github.com/razor-x/references.git"
+  }
+}
