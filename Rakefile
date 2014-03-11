@@ -1,6 +1,7 @@
 require 'active_support/core_ext/string'
 
 name = 'aps-spin-lifetime'
+build_name = 'APS Spin Lifetime'
 tex_src = 'tex'
 builds = 'builds'
 
@@ -18,7 +19,7 @@ task :tex do
 
   Dir.chdir tex_src do
     system 'latexmk', '-xelatex', '-f', "#{name}.tex"
-    FileUtils.mv "#{name}.pdf", "../#{builds}/#{name.titlecase}.pdf"
+    FileUtils.mv "#{name}.pdf", "../#{builds}/#{build_name}.pdf"
   end
 end
 
