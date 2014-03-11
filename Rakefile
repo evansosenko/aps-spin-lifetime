@@ -27,6 +27,8 @@ desc 'Clean out temporary LaTeX files.'
 task :clean do
   Dir.chdir tex_src do
     system 'latexmk', '-c'
-    Dir.glob('*.fls') { |f| File.unlink f }
+    %w(fls bbl).each do |ext|
+      Dir.glob("*.#{ext}") { |f| File.unlink f }
+    end
   end
 end
