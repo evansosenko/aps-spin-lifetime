@@ -1,3 +1,9 @@
+## Ruby
+Gemfile.lock
+
+## Builds
+builds/
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
