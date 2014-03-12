@@ -35,6 +35,8 @@ To build all targets,
 $ rake
 ````
 
+Output files will be saved in `builds/`.
+
 To see other rake tasks,
 
 ````bash
