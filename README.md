@@ -4,6 +4,60 @@
 
 **Preprint / Draft**
 
+## Requirements
+
+- `xelatex` packaged with a modern LaTeX distribution,
+  e.g., [TeX Live](http://www.tug.org/texlive/)
+- [Bower](http://bower.io/) available via
+  [Node Packaged Modules](https://npmjs.org/)
+- [Ruby 2](https://www.ruby-lang.org/)
+  with [Bundler](http://bundler.io/) (optional)
+
+To fetch and install dependencies, e.g. the bib files containing the references, run
+
+````bash
+$ bower install
+````
+
+## Building
+
+### With Ruby
+
+If you have Ruby with Bundler, install the needed gems with
+
+````bash
+$ bundle
+````
+
+To build all targets,
+
+````bash
+$ rake
+````
+
+To see other rake tasks,
+
+````bash
+$ rake -D
+````
+
+You can run
+
+````bash
+$ guard
+````
+
+which will automatically rebuild on changes.
+
+### Without Ruby
+
+To build the tex source,
+
+````bash
+$ cd tex
+$ latexmk -xelatex -f aps-spin-lifetime.tex
+````
+
 ## License
 
 This work is Copyright 2014 Evan Sosenko.
