@@ -1,3 +1,3 @@
 guard :rake, task: :tex do
-  watch %r{^src/(.+)\.tex$}
+  watch %r{^tex/(.+)\.tex$}
 end
