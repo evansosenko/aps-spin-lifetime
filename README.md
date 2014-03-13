@@ -35,7 +35,7 @@ To build all targets,
 $ rake
 ````
 
-Output files will be saved in `builds/`.
+Output files will be saved in the `build` directory.
 
 To see other rake tasks,
 

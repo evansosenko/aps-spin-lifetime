@@ -1,8 +1,8 @@
 ## Ruby
 Gemfile.lock
 
-## Builds
-builds/
+## Build
+build/
 
 ## Bower
 bower_components/

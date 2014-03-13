@@ -3,7 +3,7 @@ require 'active_support/core_ext/string'
 name = 'aps-spin-lifetime'
 build_name = 'APS Spin Lifetime'
 tex_src = 'tex'
-builds = 'builds'
+build = 'build'
 
 task :default => :build
 
@@ -12,14 +12,14 @@ task build: [:tex]
 
 desc 'Compile LaTeX to PDF.'
 task :tex do
-  FileUtils.mkdir_p builds
+  FileUtils.mkdir_p build
   path = "#{tex_src}/#{name}.tex"
 
   fail RuntimeError, "Error: #{path} not found." unless File.exists? path
 
   Dir.chdir tex_src do
     system 'latexmk', '-xelatex', '-f', "#{name}.tex"
-    FileUtils.mv "#{name}.pdf", "../#{builds}/#{build_name}.pdf"
+    FileUtils.mv "#{name}.pdf", "../#{build}/#{build_name}.pdf"
   end
 end
 
