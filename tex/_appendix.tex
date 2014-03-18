@@ -216,3 +216,86 @@ Here, $D$ is the diffusion constant, $τ$ the spin lifetime,
 and $ω = \left( g μ_B / ℏ \right) B$ is proportional to the applied magnetic field
 (with $g$ the gyromagnetic ratio and $μ_B$ the Bohr magneton).
 The spin diffusion length is $λ = \sqrt{D τ}$.
+
+\subsection{Nonlocal resistance}
+
+In this section we derive the precise relation between $\rNL$ and $μ_s^N(L)$.
+Note that we may write in general, for some $\bar{μ}$,
+\begin{equation}
+  μ = \bar{μ} + P_σ μ_s ,
+\end{equation}
+and, following
+\cite{PhysRevB.67.052409},
+define the voltage due to the difference in the chemical potentials across the contacts by
+\begin{equation}
+  V_c = \left( \bar{μ}_c^N - \bar{μ}_c^F \right) / e.
+\end{equation}
+
+We assume a fixed current $J_0 = \abs{J_0} > 0$
+flows down through the contact at $x = 0$
+and to the left in the semiconductor for $x ≤ 0$,
+and no current flows for $x > 0$.
+The experimentally measured quantity is the
+ohmic nonlocal resistance $\rNL^Ω = V_L / I_0$,
+where $I_0 = - W L J_0 / e$ is the current through the contact at $x = 0$.
+It is convenient to introduce the effective nonlocal resistance $\rNL$
+defined by
+\begin{equation}
+  \rNL = W L \rNL^Ω = - e V_L / J_0 = \frac{\bar{μ}_c^F - \bar{μ}_c^N}{J_0} .
+\end{equation}
+To determine $\rNL$, we must express the difference
+of these chemical potentials in terms of $μ_s^N$.
+
+Since there are two ferromagnetic contacts,
+we have separate functions $ψ$ and $φ$ for each contact
+which we will denote by $ψ^0$, $φ^0$, and $ψ^L$, $φ^L$.
+From \cref{eq:diffusion.ferromagnet.solution}, we have
+\begin{subequations}
+  \begin{align}
+    φ^0 \left( z' \right) & = φ_0 e^{k_F z'} , \\
+    φ^L \left( z' \right) & = φ_L e^{k_F z'} .
+  \end{align}
+\end{subequations}
+
+The physical restriction on the current flow in the semiconductor
+is imposed by noting that since $σ_s^N = 0$,
+\cref{eq:currents.current} gives $J^N = σ^N ∇v$, so we must have
+\begin{equation}
+  v_x (x) =
+    \begin{cases}
+      v_x (0) - \left( J_0 / σ^N \right) x & \text{ for } x ≤ 0 , \\
+      v_x (0)                              & \text{ for } x > 0 ,
+    \end{cases}
+\end{equation}
+$v_y (x) = v_y (0)$, and $v_z (x) = v_z (0)$.
+
+Using \cref{eq:currents.current},
+the restriction on the current flow in each ferromagnet gives
+\begin{subequations}
+  \begin{align}
+    ∇ψ^0 & = \left( J_0 / σ^F \right) - P_σ^F ∇φ^0 , \\
+    ∇ψ^L & = - P_σ^F ∇φ^L  ,
+  \end{align}
+\end{subequations}
+Integrating and enforcing
+$e V_c = v_x (0) - \left( ψ_c - P_σ^F φ_c \right)$,
+\begin{subequations}
+  \begin{align}
+    ψ^0 \left( z' \right) & = - e V_0 + P_σ^F φ_0 \left( 2 - e^{k_F z'} \right) + \left( J_0 / σ^F \right) z' + v_x (0) , \\
+    ψ^L \left( z' \right) & = - e V_L + P_σ^F φ_L \left( 2 - e^{k_F z'} \right) + v_x (0) .
+  \end{align}
+\end{subequations}
+
+There is no current at the contact at $x = 0$, thus \cref{eq:contact_currents.2.current} gives
+\begin{equation}
+  ψ_L - v_L = P_Σ^L \left( u_L - φ_L \right) .
+\end{equation}
+and with
+\cref{eq:bdry_solutions.zero.potential},
+we find
+\begin{equation}
+  \begin{aligned}
+    \rNL & = \left( ψ_L - v_L \right) - P_σ^F φ_L \\
+         & = \left[ P_Σ^L \left( 1 - \frac{R_F}{R_F + R_C^L} \right) - \frac{P_σ^F R_F}{R_F + R_C^L} \right] \frac{u_x (L)}{J_0} .
+  \end{aligned}
+\end{equation}
