@@ -1,6 +1,14 @@
 \appendix*
 \section{Computation}
 
+In this appendix we derive an expression for the nonlocal resistance
+for finite contact resistance.
+We first present the key definitions
+and critical boundary conditions which follow.
+We then solve the diffusion equation inside the semiconductor
+to determine the spin chemical potential at the far contact, $μ_s^N(L)$.
+Finally, we derive the relation between the nonlocal resistance and $μ_s^N(L)$.
+
 \subsection{Definitions}
 
 Most of the following is taken from
@@ -30,10 +38,7 @@ The gradient of the chemical potentials drives a current and spin current,
   \begin{alignat}{3}
     & J_{↑↓} && = σ_{↑↓} ∇μ_{↑↓} , \\
     %
-    \label{eq:currents.current}
     & J      && = J_↑ + J_↓      & = σ   ∇μ + σ_s ∇μ_s , \\
-    %
-    \label{eq:currents.spincurrent}
     & J_s    && = J_↑ - J_↓      & = σ_s ∇μ + σ   ∇μ_s .
   \end{alignat}
 \end{subequations}
@@ -66,7 +71,6 @@ The subscript $c$ will always denote the function evaluated at the contact.
 To reduce the number of subscripts and superscripts in the following,
 we adopt the notation for the potentials
 \begin{subequations}
-  \label{eq:potentials.alt}
   \begin{equation}
     \begin{aligned}
     & \begin{alignedat}{2}
@@ -79,13 +83,130 @@ we adopt the notation for the potentials
       \end{alignedat}
     \end{aligned}
   \end{equation}
+  and currents
+  \begin{equation}
+    \begin{alignedat}{2}
+      & ȷ   && = J_s     , \\
+      & J_c && = J^C     , \\
+      & ȷ_c && = J_s^C   .
+    \end{alignedat}
+  \end{equation}
 \end{subequations}
-and currents
+
+We rewrite \cref{eq:contact_currents} as
 \begin{subequations}
-  \label{eq:currents.alt}
-  \begin{alignat}{2}
-    & ȷ   && = J_s     , \\
-    & J_c && = J^C     , \\
-    & ȷ_c && = J_s^C   .
+  \label{eq:contact_currents.2}
+  \begin{alignat}{3}
+    \label{eq:contact_currents.2.current}
+    & J_c && = Σ   \left( v_c - ψ_c \right) && + Σ_s \left( u_c - φ_c \right) , \\
+    %
+    \label{eq:contact_currents.2.spincurrent}
+    & ȷ_c && = Σ_s \left( v_c - ψ_c \right) && + Σ   \left( u_c - φ_c \right) .
   \end{alignat}
 \end{subequations}
+and \cref{eq:conductances,eq:currents} as
+\begin{equation}
+  \label{eq:bdry_current}
+  ȷ = P_σ J + 4 \frac{σ_↑ σ_↓}{σ} ∇μ_s .
+\end{equation}
+
+Using \cref{eq:contact_conductances,eq:contact_currents.2},
+\begin{equation}
+  \label{eq:bdry_current_contact}
+  ȷ_c = P_Σ^i J_c + {R_C^i}^{-1} \left( u_c - φ_c \right) ,
+\end{equation}
+where the contact resistance is
+\begin{equation}
+  R_C^i = \frac{Σ^i}{4 Σ_↑^i Σ_↓^i} .
+\end{equation}
+The superscript $i$ allows for contacts with difference conductances.
+
+\subsection{Boundary conditions}
+
+\subsubsection{Semiconductor}
+
+For the semiconductor, $σ^N_↑ = σ^N_↓ = σ^N / 2$, so $P_σ^N = 0$.
+Evaluating \cref{eq:bdry_current} at the contact gives
+\begin{equation}
+  \label{eq:bdry_current.semiconductor}
+  ȷ^N_c = σ^N ( ∇u )_c .
+\end{equation}
+
+\subsubsection{Ferromagnet}
+
+For the ferromagnet, one assumes $μ_s^F$ satisfies
+the one dimensional diffusion equation.
+We choose the $z'$ coordinate with origin at the contact
+and increasingly negative away from the contact.
+The equation
+\begin{equation}
+  \label{eq:diffusion.ferromagnet}
+  φ'' \left( z' \right) - k_F^2 φ \left( z' \right) = 0 ,
+\end{equation}
+with the boundary condition
+$\lim_{z' → - ∞} φ(z') = 0$
+has solution
+\begin{equation}
+  \label{eq:diffusion.ferromagnet.solution}
+  φ(z') = φ_c e^{k_F z'} ,
+\end{equation}
+where $φ_c = φ(0)$ is a yet undetermined constant.
+Putting this into \cref{eq:bdry_current} and evaluating it at the contact gives
+\begin{equation}
+  \label{eq:bdry_current.ferromagnet}
+  ȷ^F_c = P_σ^F J^F_c + R_F^{-1} φ_c ,
+\end{equation}
+where the ferromagnet resistance is
+\begin{equation}
+  R_F = \frac{σ^F}{ 4 σ_↑^F σ_↓^F k_F } .
+\end{equation}
+Here, $λ_F = 1 / k_F$ is the spin diffusion length in the ferromagnet.
+
+\subsubsection{Continuity assumptions}
+
+At the contact, the current and spin current are assumed continuous,
+\begin{subequations}
+  \label{eq:continuity.current}
+  \begin{alignat}{3}
+    & J_c && = J^F_c && = J^N_c , \\
+    & ȷ_c && = ȷ^F_c && = ȷ^N_c .
+  \end{alignat}
+\end{subequations}
+Using \cref{eq:bdry_current.ferromagnet,eq:bdry_current_contact,eq:continuity.current}
+we find the relation
+\begin{subequations}
+  \begin{equation}
+    \label{eq:bdry_solutions.current}
+    \left( P_σ^F R_F + P_Σ^i R_C^i \right) J_c = \left( R_F + R_C^i \right) ȷ_c - u_c ,
+  \end{equation}
+  and that $φ_c$ is determined by
+  \begin{equation}
+    \label{eq:bdry_solutions.potential}
+    R_F^{-1} φ_c = \frac{ \left( P_Σ^i - P_σ^F \right) R_C^i ȷ_c + P_σ^F u_c}{P_σ^F R_F + P_Σ^i R_C^i} .
+  \end{equation}
+\end{subequations}
+In the special case of zero current at the contact ($J_c = 0$),
+\cref{eq:bdry_solutions.current,eq:bdry_solutions.potential} reduce to
+\begin{subequations}
+  \label{eq:bdry_solutions.zero}
+  \begin{alignat}{2}
+    \label{eq:bdry_solutions.zero.current}
+    & ȷ_c && = \frac{1}{R_F + R_C^i} u_c   , \\
+    %
+    \label{eq:bdry_solutions.zero.potential}
+    & φ_c && = \frac{R_F}{R_F + R_C^i} u_c .
+  \end{alignat}
+\end{subequations}
+
+\subsubsection{Diffusion equation}
+
+Inside the semiconductor, $u$ satisfies the diffusion equation
+\begin{equation}
+  \label{eq:diffusion}
+  D ∇^2 u - \frac{u}{τ} + ω × u = 0 ,
+\end{equation}
+Here, $D$ is the diffusion constant, $τ$ the spin lifetime,
+and $ω = \left( g μ_B / ℏ \right) B$ is proportional to the applied magnetic field
+(with $g$ the gyromagnetic ratio and $μ_B$ the Bohr magneton).
+The spin diffusion length is $λ = \sqrt{D τ}$.
+
