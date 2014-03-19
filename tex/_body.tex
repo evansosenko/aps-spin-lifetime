@@ -37,11 +37,15 @@ and depends only on the scales $L / λ$, $ω τ$, and $λ / r_i$.
 The sign corresponds to parallel and antiparallel field alignments.
 The parameters $r_i$ are proportional to the contact resistances $R_C^i$ as
 \begin{equation}
+  \label{eq:r-parameter}
   r_i = \frac{R_F + R_C^i}{\rSQ} W ,
 \end{equation}
 where $R_F$ is the resistances of the ferromagnet,
 $W$ is graphene flake width,
-and $\rSQ = W / σ^N$
+\begin{equation}
+  \label{eq:square_resistance}
+  \rSQ = W / σ^N .
+\end{equation}
 \footnote{
   The resistances $R_F, R_C^i$ are the effective resistances
   of a unit cross sectional area.
@@ -56,6 +60,7 @@ Specifically, we find
   R_N = \frac{λ}{W L} \frac{1}{σ^N} ,
 \end{equation}
 \begin{subequations}
+  \label{eq:polarizations}
   \begin{align}
     p_1 & = \frac{P_σ^F R_F + P_Σ^L R_C^L}{R_F + R_C^L} , \\
     p_2 & = p_1^2 \frac{1 - \frac{P_σ^F R_F}{P_Σ^L R_C^L}}{1 + \frac{P_σ^F R_F}{P_Σ^L R_C^L}} ,
