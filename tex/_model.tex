@@ -2,47 +2,28 @@
 \label{s:model}
 
 The assumed device geometry and definition of the nonlocal resistance
-is the same as given in figure 1 from \cite{PhysRevB.67.052409},
-The injection contact is at $x = 0$ and the detector at $x = L$.
-When the chemical potential is written in the decomposed form
-$μ(x) = \bar{μ} (x) + P_σ μ_s(x)$,
-the measured voltage $V_L$ at the right terminal is given by
-$e V_L = \bar{μ}^N (L) - \bar{μ}^F (L)$;
-here $P_σ = \left( σ_↑ - σ_↓ \right) / \left( σ_↑ + σ_↓ \right)$,
-where $σ_{↑↓}$ are the material spin conductivities.
-The nonlocal resistance is $V_L / I_0$ where $I_0$ is the injected current.
+is the same as given in figure 1 from \cite{PhysRevB.67.052409}.
+The key parameters are
+the contact spacing $L$,
+the diffusion constant $D$,
+the spin lifetime $τ$,
+the spin diffusion length $λ = \sqrt{D τ}$,
+and $ω = \left( g μ_B / ℏ \right) B$ which is proportional to the applied magnetic field $B$.
+Any symbols not defined in the body of this paper can be found in \cref{s:appendix}.
 
-The basic definitions and fundamental equations are taken from
-\cite{ActaPhysicaSlovaca.57.4_5.565-907}.
-The spin chemical potential $μ_s$ is assumed to satisfy the diffusion equation,
+We find the nonlocal resistance may be written in the form
 \begin{equation}
-  D ∇^2 μ_s - \frac{μ_s}{τ} + ω × μ_s = 0 ,
+  \rNL^± = ± p_1 p_2 R_N f ,
 \end{equation}
-both inside the ferromagnet and the semiconductor.
-Here, $D$ is the diffusion constant, $τ$ the spin lifetime,
-and $ω = \left( g μ_B / ℏ \right) B$ is proportional to the applied magnetic field
-(with $g$ the gyromagnetic ratio and $μ_B$ the Bohr magneton).
-The spin diffusion length is $λ = \sqrt{D τ}$.
-
-Starting with the definitions of material currents $J_{↑↓} = σ_{↑↓} ∇μ_{↑↓}$,
-and currents $J_{↑↓}^C = Σ_{↑↓} \left( μ^N_{↑↓} - μ^F_{↑↓} \right)_c$
-\footnote{The subscript $c$ denotes evaluation at the contact.}
-due to the finite contact conductances $Σ_{↑↓}$,
-and carefully applying continuity of $μ_s$ and currents,
-we find the nonlocal resistance may be written in the form
-$\rNL^± = ± p_1 p_2 R_N f$,
-where $p_1, p_2$ depend on the polarizations,
-$R_N = λ / σ^N$ is a resistance scale,
-and $f$ is unitless, proportional to $μ_s^N (L)$,
-and depends only on the scales $L / λ$, $ω τ$, and $λ / r_i$.
+where $p_1, p_2$ depend on the polarizations, $R_N$ is a resistance scale,
+and $f$ is unitless and depends only on the scales $L / λ$, $ω τ$, and $λ / r_i$.
 The sign corresponds to parallel and antiparallel field alignments.
 The parameters $r_i$ are proportional to the contact resistances $R_C^i$ as
 \begin{equation}
   \label{eq:r-parameter}
   r_i = \frac{R_F + R_C^i}{\rSQ} W ,
 \end{equation}
-where $R_F$ is the resistances of the ferromagnet,
-$W$ is graphene flake width,
+where $R_F$ is the resistances of the ferromagnet, $W$ is graphene flake width, and
 \begin{equation}
   \label{eq:square_resistance}
   \rSQ = W / σ^N .
@@ -56,15 +37,17 @@ $W$ is graphene flake width,
   $R_C^i → W_F W R_C^i$,
   where $W_F$ is the contact width, i.e., $W_F W$ is the contact area.
 }.
-Specifically, we find
+A detailed derivation is given in \cref{s:appendix},
+specifically, we find a resistance
 \begin{equation}
   R_N = \frac{λ}{W L} \frac{1}{σ^N} ,
 \end{equation}
+polarizations
 \begin{subequations}
   \label{eq:polarizations}
   \begin{align}
     p_1 & = \frac{P_σ^F R_F + P_Σ^L R_C^L}{R_F + R_C^L} , \\
-    p_2 & = p_1^2 \frac{1 - \frac{P_σ^F R_F}{P_Σ^L R_C^L}}{1 + \frac{P_σ^F R_F}{P_Σ^L R_C^L}} ,
+    p_2 & = p_1^2 \left. \left( 1 - \frac{P_σ^F R_F}{P_Σ^L R_C^L} \right) \middle/ \left(1 + \frac{P_σ^F R_F}{P_Σ^L R_C^L} \right) \right. ,
   \end{align}
 \end{subequations}
 and the function
@@ -76,8 +59,7 @@ and the function
 \end{widetext}
 
 The expression $Δ \rNL = \abs{\rNL^+ - \rNL^-}$
-measures the difference in signal between
-parallel and antiparallel field alignments.
+measures the difference in signal between parallel and antiparallel field alignments.
 Assuming positive polarizations allows us to combine
 $P^2 = \abs{p_1 p_2} < 1$, and write
 \begin{equation}
@@ -87,5 +69,5 @@ with
 \begin{equation}
   R_N = \frac{λ}{W} \frac{1}{σ_G} ,
 \end{equation}
-where $σ_G$ is the graphene conductance normally given in units of
+where $σ_G = σ^N L$ is the graphene conductance normally given in units of
 $\si{\milli \siemens} = \left( \si{\milli \ohm} \right)^{-1}$.
