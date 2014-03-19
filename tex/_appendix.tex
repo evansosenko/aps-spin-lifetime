@@ -1,13 +1,12 @@
 \appendix*
 \section{Computation}
 
-In this appendix we derive an expression for the nonlocal resistance
-for finite contact resistance.
-We first present the key definitions
-and critical boundary conditions which follow.
-We then solve the diffusion equation inside the semiconductor
-to determine the spin chemical potential at the far contact, $μ_s^N(L)$.
-Finally, we derive the relation between the nonlocal resistance and $μ_s^N(L)$.
+In this appendix we derive an expression for
+the nonlocal resistance for finite contact resistance.
+We first present the key definitions and critical boundary conditions.
+We then derive the relation between the nonlocal resistance
+and the spin chemical potential at the far contact, $μ_s^N(L)$.
+Finally, we solve the diffusion equation inside the semiconductor to find $μ_s^N(L)$.
 
 \subsection{Definitions}
 
@@ -204,19 +203,6 @@ In the special case of zero current at the contact ($J_c = 0$),
   \end{alignat}
 \end{subequations}
 
-\subsection{Diffusion equation}
-
-In this section we show how to solve for $μ_s^N(L)$.
-Inside the semiconductor, $u$ satisfies the diffusion equation
-\begin{equation}
-  \label{eq:diffusion}
-  D ∇^2 u - \frac{u}{τ} + ω × u = 0 ,
-\end{equation}
-Here, $D$ is the diffusion constant, $τ$ the spin lifetime,
-and $ω = \left( g μ_B / ℏ \right) B$ is proportional to the applied magnetic field
-(with $g$ the gyromagnetic ratio and $μ_B$ the Bohr magneton).
-The spin diffusion length is $λ = \sqrt{D τ}$.
-
 \subsection{Nonlocal resistance}
 
 In this section we derive the precise relation between $\rNL$ and $μ_s^N(L)$.
@@ -299,3 +285,16 @@ we find
          & = \left[ P_Σ^L \left( 1 - \frac{R_F}{R_F + R_C^L} \right) - \frac{P_σ^F R_F}{R_F + R_C^L} \right] \frac{u_x (L)}{J_0} .
   \end{aligned}
 \end{equation}
+
+\subsection{Diffusion equation}
+
+In this section we show how to solve for $μ_s^N(L)$.
+Inside the semiconductor, $u$ satisfies the diffusion equation
+\begin{equation}
+  \label{eq:diffusion}
+  D ∇^2 u - \frac{u}{τ} + ω × u = 0 ,
+\end{equation}
+Here, $D$ is the diffusion constant, $τ$ the spin lifetime,
+and $ω = \left( g μ_B / ℏ \right) B$ is proportional to the applied magnetic field
+(with $g$ the gyromagnetic ratio and $μ_B$ the Bohr magneton).
+The spin diffusion length is $λ = \sqrt{D τ}$.
