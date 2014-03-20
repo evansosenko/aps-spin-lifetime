@@ -18,16 +18,13 @@ We find the nonlocal resistance may be written in the form
 where $p_1, p_2$ depend on the polarizations, $R_N$ is a resistance scale,
 and $f$ is unitless and depends only on the scales $L / λ$, $ω τ$, and $λ / r_i$.
 The sign corresponds to parallel and antiparallel field alignments.
-The parameters $r_i$ are proportional to the contact resistances $R_C^i$ as
+The parameters $r_i$ with $i$ either $0$ for the left contact or $L$ for the right are
 \begin{equation}
   \label{eq:r-parameter}
   r_i = \frac{R_F + R_C^i}{\rSQ} W ,
 \end{equation}
-where $R_F$ is the resistances of the ferromagnet, $W$ is graphene flake width, and
-\begin{equation}
-  \label{eq:square_resistance}
-  \rSQ = W / σ^N .
-\end{equation}
+where $R_F$ is the resistances of the ferromagnet
+and $R_C^i$ are the contact resistances
 \footnote{
   The resistances $R_F, R_C^i$ are the effective resistances
   of a unit cross sectional area.
@@ -36,18 +33,24 @@ where $R_F$ is the resistances of the ferromagnet, $W$ is graphene flake width, 
   $R_F → W_F W R_C^i$,
   $R_C^i → W_F W R_C^i$,
   where $W_F$ is the contact width, i.e., $W_F W$ is the contact area.
-}.
+},
+$W$ is the graphene flake width, and
+\begin{equation}
+  \label{eq:square_resistance}
+  \rSQ = W / σ^N .
+\end{equation}
+
 A detailed derivation is given in \cref{s:appendix},
 specifically, we find a resistance
 \begin{equation}
   R_N = \frac{λ}{W L} \frac{1}{σ^N} ,
 \end{equation}
-polarizations
+polarizations given by
 \begin{subequations}
   \label{eq:polarizations}
   \begin{align}
     p_1 & = \frac{P_σ^F R_F + P_Σ^L R_C^L}{R_F + R_C^L} , \\
-    p_2 & = p_1^2 \left. \left( 1 - \frac{P_σ^F R_F}{P_Σ^L R_C^L} \right) \middle/ \left(1 + \frac{P_σ^F R_F}{P_Σ^L R_C^L} \right) \right. ,
+    p_2 / p_1 & = \left. \left( 1 - \frac{P_σ^F R_F}{P_Σ^L R_C^L} \right) \middle/ \left(1 + \frac{P_σ^F R_F}{P_Σ^L R_C^L} \right) \right. ,
   \end{align}
 \end{subequations}
 and the function
