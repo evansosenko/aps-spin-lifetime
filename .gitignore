@@ -5,7 +5,7 @@ Gemfile.lock
 build/
 
 ## Bower
-bower_components/
+tex/components/
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
