@@ -4,6 +4,7 @@
 \usepackage{unicode-math}
 \usepackage{mathtools}
 \usepackage{siunitx}
+\usepackage{graphicx}
 
 % PDF bookmarks.
 \usepackage[hidelinks,colorlinks]{hyperref}
@@ -27,6 +28,9 @@
 \let\oldnorm\norm
 \def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
 \makeatother
+
+% Include commands generated from figure creation.
+\input{figures/plot_difference_info}
 
 % Define the real and imaginary part functions.
 \newcommand{\re}{\operatorname{Re}}
