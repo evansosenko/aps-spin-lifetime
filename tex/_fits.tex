@@ -13,25 +13,34 @@ was fit
 }
 \cite{Hunter:2007}
 to the model presented here.
+We assume similar contacts, $R_C = R_C^0 = R_C^L$.
 The resistance of the ferromagnet \ce{Co} is computed as
 $R_F = ρ_F λ_F / A_J$,
 where $A_J$ is the junction area estimated at $A_J = W d$,
 with $d$ between \SIrange[range-phrase={ and }]{0.5}{50}{\nano \meter}
 \cite{PhysRevLett.105.167202}.
+Fits were done using a simple least squares algorithm
+with parameters $τ$, $D$, $R_C$, and $P$.
+The polarization $P$ was constrained between zero and one.
 
-\Cref{fig:nonlocal_resistance.difference}
-shows that the overall effect of including a finite $R_C$ is to increase $τ$.
+\Cref{fig:nonlocal_resistance.difference} shows fits of
+$Δ \rNL$ given by \cref{eq:nonlocal_resistance.difference}
+for devices with tunneling and transparent contacts.
 Fits (a) and (b) with tunneling contacts give large
-$R_C ∼ \SI{10e7}{\kilo \ohm}$ and comparable lifetimes,
+$R_C ∼ \SI{10e7}{\kilo \ohm}$ and lifetimes equivalent to fitting with $R_C → ∞$,
 while (d) with transparent contacts gives a reduced $R_C ∼ \SI{3}{\kilo \ohm}$
-and a lifetime increased by a factor of two.
+and a lifetime increased by at most a factor of two
+(compare to \SI{78}{\pico \second} for $R_C → ∞$).
+The polarization $P$ for tunneling contacts is \SI{7}{\percent}
+smaller than the lower bound given in \cite{PhysRevLett.105.167202},
+while for transparent contacts, $P$ is reduced by an order of magnitude.
 
 \begin{figure}
   \caption{
     Data in fig. 4 from \cite{PhysRevLett.105.167202}
     fit to \cref{eq:nonlocal_resistance.difference}
     with the following values: \plotDifferenceInfo.
-    The contact type (tunneling or transparent)
+    The contact type (tunneling, transparent)
     and the contact separation $L$ varies.
   }
   \label{fig:nonlocal_resistance.difference}
