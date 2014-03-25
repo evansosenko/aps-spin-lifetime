@@ -1,12 +1,9 @@
 \section{Regimes}
 \label{s:regimes}
 
-In the case of similar contacts at zero magnetic field,
-\begin{equation}
-  f = \left[ 2 \left( 1 + λ / r \right) e^{L / λ} + \left( λ / r \right)^2 \sinh{L / λ} \right]^{-1} ,
-\end{equation}
-which agrees with eq. (3) in
-\cite{PhysRevB.80.214427}.
+In this section we discuss various limits of our expression.
+We show agreement of our expression with past results
+and discuses how fitting Hanle
 
 In the limit of tunneling contacts, $R_C^0, R_C^L ≫ R_F$.
 Putting $r_0, r_L → ∞$ gives $p_1 p_2 → \left( P_Σ^L \right)^2$ and
@@ -21,3 +18,56 @@ In the limit of zero magnetic field,
 \end{equation}
 which agrees with eq. (6) in
 \cite{PhysRevB.67.052409}.
+
+In the following, we only consider the case $r = r_0 = r_L$ of similar contacts.
+Let $f_0$ denote $f$ at zero magnetic field,
+\begin{equation}
+  f_0 = \left[ 2 \left( 1 + λ / r \right) e^{L / λ} + \left( λ / r \right)^2 \sinh{L / λ} \right]^{-1} ,
+\end{equation}
+which agrees with eq. (3) in
+\cite{PhysRevB.80.214427}.
+For $λ / r ≫ 1$,
+\begin{equation}
+  f_0 = \frac{2 e^{- \left( L / λ \right)}}{\left( λ / r \right)^2} .
+\end{equation}
+
+When $\sqrt{ω τ} ≫ λ / r ≫ 1$, we approximate $1 + i ω τ ≈ i ω τ$,
+\begin{equation}
+  f = \frac{1}{2 \sqrt{ω τ}}
+      e^{- \left( L / λ \right) \sqrt{ω τ / 2}}
+      \cos{\left[ \frac{L}{λ} \sqrt{\frac{ω τ}{2}} + \frac{π}{4} \right]} .
+\end{equation}
+In this limit, the nonlocal resistance scales as
+\begin{equation}
+  Δ \rNL ∝ \frac{λ}{\sqrt{ω τ}} = \sqrt{\frac{D}{ω}} ,
+\end{equation}
+and the normalized nonlocal resistance as
+\begin{equation}
+  f / f_0 ∝ \frac{\left( λ / r \right)^2}{\sqrt{ω τ}} .
+\end{equation}
+
+When $λ / r ≫ \sqrt{ω τ} ≫ 1$,
+\begin{equation}
+  f = \frac{\sqrt{ω τ}}{\left( λ / r \right)^2}
+      e^{- \left( L / λ \right) \sqrt{ω τ / 2}}
+      \sin{\left[ \frac{L}{λ} \sqrt{\frac{ω τ}{2}} + \frac{π}{4} \right]} .
+\end{equation}
+In this limit, the nonlocal resistance scales as
+\begin{equation}
+  Δ \rNL ∝ λ \sqrt{ω τ} = τ \sqrt{ω D} ,
+\end{equation}
+and the normalized nonlocal resistance as
+\begin{equation}
+  f / f_0 ∝ \sqrt{ω τ} .
+\end{equation}
+
+\subsection{Effective $g$-factor}
+
+In \cite{Swartz2013}, it is shown that when using the standard integral formula
+\begin{equation}
+  \rNL = \sNL ∫_0^∞ \frac{e^{-t / τ}}{\sqrt{4 π D t}}
+             \exp{\left[- \frac{L^2}{4 π D t} \right]} \cos{ω t} \: dt
+\end{equation}
+Hanle fits are non-unique up to the scaling
+$g → c g$, $τ → τ / c$, $D → c D$, $sNL → c$
+for any constant $c > 0$.
