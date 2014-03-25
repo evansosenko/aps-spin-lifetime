@@ -2,8 +2,9 @@
 \label{s:regimes}
 
 In this section we discuss various limits of our expression.
-We show agreement of our expression with past results
-and discuses how fitting Hanle
+First, we show agreement of our expression with past results
+Next, we discuss regimes where appropriate scaling will give non-unique Hanle fits.
+In the following, we mostly consider the case $r = r_0 = r_L$ of similar contacts.
 
 In the limit of tunneling contacts, $R_C^0, R_C^L ≫ R_F$.
 Putting $r_0, r_L → ∞$ gives $p_1 p_2 → \left( P_Σ^L \right)^2$ and
@@ -12,6 +13,8 @@ Putting $r_0, r_L → ∞$ gives $p_1 p_2 → \left( P_Σ^L \right)^2$ and
 \end{equation}
 which is of the same form as found in appendix B of
 \cite{PhysRevB.37.5312}.
+Fitting with this expression was found to give results equivalent to fitting with
+\cref{eq:nonlocal_resistance.integral}.
 In the limit of zero magnetic field,
 \begin{equation}
   Δ \rNL = \left( P_Σ^L \right)^2 R_N e^{- L/λ} ,
@@ -19,54 +22,83 @@ In the limit of zero magnetic field,
 which agrees with eq. (6) in
 \cite{PhysRevB.67.052409}.
 
-In the following, we only consider the case $r = r_0 = r_L$ of similar contacts.
 Let $f_0$ denote $f$ at zero magnetic field,
 \begin{equation}
   f_0 = \left[ 2 \left( 1 + λ / r \right) e^{L / λ} + \left( λ / r \right)^2 \sinh{L / λ} \right]^{-1} ,
 \end{equation}
 which agrees with eq. (3) in
 \cite{PhysRevB.80.214427}.
+
+\subsection{Scaling}
+
 For $λ / r ≫ 1$,
 \begin{equation}
   f_0 = \frac{2 e^{- \left( L / λ \right)}}{\left( λ / r \right)^2} .
 \end{equation}
-
-When $\sqrt{ω τ} ≫ λ / r ≫ 1$, we approximate $1 + i ω τ ≈ i ω τ$,
+When $\sqrt{ω τ} ≫ 1$, we approximate $1 + i ω τ ≈ i ω τ$.
+Note that the product
 \begin{equation}
+   \frac{L}{λ} \sqrt{ω τ} = L \sqrt{\frac{D}{ω}}
+\end{equation}
+is independent of the lifetime.
+
+When $\sqrt{ω τ} ≫ λ / r ≫ 1$,
+\begin{equation}
+  \label{eq:regime.1.f}
   f = \frac{1}{2 \sqrt{ω τ}}
       e^{- \left( L / λ \right) \sqrt{ω τ / 2}}
       \cos{\left[ \frac{L}{λ} \sqrt{\frac{ω τ}{2}} + \frac{π}{4} \right]} .
 \end{equation}
 In this limit, the nonlocal resistance scales as
 \begin{equation}
+  \label{eq:regime.1.nonlocal_resistance}
   Δ \rNL ∝ \frac{λ}{\sqrt{ω τ}} = \sqrt{\frac{D}{ω}} ,
 \end{equation}
 and the normalized nonlocal resistance as
 \begin{equation}
-  f / f_0 ∝ \frac{\left( λ / r \right)^2}{\sqrt{ω τ}} .
+  \label{eq:regime.1.ratio}
+  f / f_0 ∝ \frac{\left( λ / r \right)^2}{\sqrt{ω τ}} = D \sqrt{\frac{ω r^4}{τ}} .
 \end{equation}
 
 When $λ / r ≫ \sqrt{ω τ} ≫ 1$,
 \begin{equation}
+  \label{eq:regime.2.f}
   f = \frac{\sqrt{ω τ}}{\left( λ / r \right)^2}
       e^{- \left( L / λ \right) \sqrt{ω τ / 2}}
       \sin{\left[ \frac{L}{λ} \sqrt{\frac{ω τ}{2}} + \frac{π}{4} \right]} .
 \end{equation}
 In this limit, the nonlocal resistance scales as
 \begin{equation}
+  \label{eq:regime.2.nonlocal_resistance}
   Δ \rNL ∝ λ \sqrt{ω τ} = τ \sqrt{ω D} ,
 \end{equation}
 and the normalized nonlocal resistance as
 \begin{equation}
+  \label{eq:regime.2.ratio}
   f / f_0 ∝ \sqrt{ω τ} .
 \end{equation}
+
+In the limits of \cref{eq:regime.1.f,eq:regime.2.f},
+the zeros of the Hanle fit are independent of the lifetime
+and are determined by $D$ though the condition
+\begin{equation}
+  \frac{L}{λ} \sqrt{\frac{ω τ}{2}} + \frac{π}{4} = \frac{n π}{2} ,
+\end{equation}
+where $n = 1$ for \cref{eq:regime.1.f} and $n = 0$ for \cref{eq:regime.2.f}.
+When fitting the normalized nonlocal resistance
+in the limit of \cref{eq:regime.1.ratio},
+scaling $τ → c τ$ and $r → c^{1/4} r$ by some constant $c > 0$ will give the same fit.
+Thus, one can obtain a fit with larger lifetime through moderate increase in $r$.
+This scaling was observed in numerical simulations
+\cite{PhysRevB.86.235408}.
 
 \subsection{Effective $g$-factor}
 
 In \cite{Swartz2013}, it is shown that when using the standard integral formula
 \begin{equation}
+  \label{eq:nonlocal_resistance.integral}
   \rNL = \sNL ∫_0^∞ \frac{e^{-t / τ}}{\sqrt{4 π D t}}
-             \exp{\left[- \frac{L^2}{4 π D t} \right]} \cos{ω t} \: dt
+             \exp{\left[- \frac{L^2}{4 π D t} \right]} \cos{ω t} \: dt ,
 \end{equation}
 Hanle fits are non-unique up to the scaling
 $g → c g$, $τ → τ / c$, $D → c D$, $sNL → c$
