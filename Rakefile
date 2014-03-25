@@ -32,3 +32,20 @@ task :clean do
     end
   end
 end
+
+desc 'Build a single LaTeX file for submission.'
+task expand: [:clean] do
+  out = "#{build}/#{name}"
+  out_file = "#{out}/#{name}.tex"
+  FileUtils.mkdir_p out
+  Dir.chdir tex_src do
+    system 'latexpand', '--keep-comments', '-o', "../#{out_file}", "#{name}.tex"
+    %w(spintronics software).each do |f|
+      FileUtils.cp "components/references/#{f}.bib", "../#{out}"
+    end
+    %w(figures).each { |d| FileUtils.cp_r d, "../#{out}"}
+  end
+  Dir["#{out}/figures/*.tex"].each { |f| FileUtils.remove_entry_secure f }
+  text = File.read(out_file).gsub('components/references/', '')
+  File.open(out_file, 'w') {|f| f.puts text}
+end
