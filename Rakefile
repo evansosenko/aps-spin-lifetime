@@ -35,17 +35,17 @@ end
 
 desc 'Build a single LaTeX file for submission.'
 task expand: [:clean] do
-  out = "#{build}/#{name}"
-  out_file = "#{out}/#{name}.tex"
+  out = File.join build, name
+  out_file = File.join out, "#{name}.tex"
   FileUtils.mkdir_p out
   Dir.chdir tex_src do
-    system 'latexpand', '--keep-comments', '-o', "../#{out_file}", "#{name}.tex"
+    system 'latexpand', '--keep-comments', '-o', File.join('../', out_file)
     %w(spintronics software).each do |f|
-      FileUtils.cp "components/references/#{f}.bib", "../#{out}"
+      FileUtils.cp File.join('components', 'references', "#{f}.bib"), File.join('../', out)
     end
-    %w(figures).each { |d| FileUtils.cp_r d, "../#{out}"}
+    %w(figures).each { |d| FileUtils.cp_r d, File.join('../', out) }
   end
-  Dir["#{out}/figures/*.tex"].each { |f| FileUtils.remove_entry_secure f }
+  Dir[File.join(out, 'figures', '*.tex')].each { |f| FileUtils.remove_entry_secure f }
   text = File.read(out_file).gsub('components/references/', '')
-  File.open(out_file, 'w') {|f| f.puts text}
+  File.open(out_file, 'w') { |f| f.puts text }
 end
