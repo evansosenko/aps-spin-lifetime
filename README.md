@@ -6,12 +6,14 @@
 
 ## Requirements
 
-- `xelatex` packaged with a modern LaTeX distribution,
-  e.g., [TeX Live](http://www.tug.org/texlive/)
+- `xelatex`, [`la­texmk`](http://www.ctan.org/pkg/latexmk/),
+  and [`latexpand`](http://www.ctan.org/pkg/latexpand/)
+  packaged with a modern LaTeX distribution,
+  e.g., [TeX Live](http://www.tug.org/texlive/)..
 - [Bower](http://bower.io/) available via
   [Node Packaged Modules](https://npmjs.org/)
 - [Ruby 2](https://www.ruby-lang.org/)
-  with [Bundler](http://bundler.io/) (optional)
+  with [Bundler](http://bundler.io/) (optional).
 
 To fetch and install dependencies, e.g. the bib files containing the references, run
 
@@ -57,7 +59,7 @@ To build the tex source,
 
 ````bash
 $ cd tex
-$ latexmk -xelatex -f aps-spin-lifetime.tex
+$ latexmk -xelatex aps-spin-lifetime.tex
 ````
 
 ## License
