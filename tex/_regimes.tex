@@ -3,7 +3,7 @@
 In this section we discuss the various limits of
 the expression describing the Hanle precession curve.
 First, we show that the commonly used results for zero magnetic field
-and tunneling contacts is correctly reproduced.
+and tunneling contacts are correctly reproduced.
 Next, we discuss regimes where appropriate scaling will give non-unique Hanle fits.
 In the following, we mostly consider the case $r = r_0 = r_L$ of similar contacts.
 
@@ -20,8 +20,7 @@ to fitting with the Hanle equation
  \rNL = \sNL ∫_0^∞ \frac{e^{-t / τ}}{\sqrt{4 π D t}}
             \exp{\left[- \frac{L^2}{4 π D t} \right]} \cos{ω t} \: dt .
 \end{equation}
-
-In the limit of zero magnetic field,
+In the additional limit of zero magnetic field,
 \begin{equation}
   Δ \rNL = \left( P_Σ^L \right)^2 R_N e^{- L / λ} ,
 \end{equation}
@@ -40,12 +39,14 @@ we exploit the fact that it only depends on
 the dimensionless ratios $r / λ$, $L / λ$ and $ω τ$.
 The only other parameter of the conducting channel that enters the expression
 is the overall scale $λ$ in $R_N$.
-The expression $f$ contains three terms which are of zeroth, first, and second order $λ / r$.
+The expression $f$ contains three terms
+which are of zeroth, first, and second order in $λ / r$.
 Thus, as the contact resistance decreases,
 one goes from a device dominated by the first term to one dominated by the last.
 But precisely how this comes about depends on the value of $ω τ$.
+
 For infinite contact resistance, it was pointed out that any rescaling
-of $g$, $τ$ and $D$ that leaves $λ$ and $ω τ$ unchanged,
+of $g$, $τ$ and $D$ that leaves $λ$ and $ω τ$ unchanged
 leads to the same Hanle precession curves
 \cite{Swartz2013}.
 Our result shows that the same is also true
@@ -65,7 +66,7 @@ In devices where $λ / r ≫ 1$, the normalization factor is
 In this regime, if $D$ is not very different from the infinite contact resistance value,
 then the lifetime can be large, i.e., $τ ≫ \SI{1}{\nano \second}$.
 As one tunes the magnetic field $\sqrt{ω τ} ≫ 1$, for small values of the field,
-and for much of the curve we can approximate $1 + i ω τ ≈ i ω τ$.
+and for much of the curve, we can approximate $1 + i ω τ ≈ i ω τ$.
 An interesting consequence of this is that the zero of the Hanle precession curve
 becomes independent of the scattering time.
 Note that the product
@@ -73,12 +74,12 @@ Note that the product
    \frac{L}{λ} \sqrt{ω τ} = L \sqrt{\frac{D}{ω}}
 \end{equation}
 is independent of the lifetime.
-As one further tunes the magnetic field the Hanle curve is given by
+As one further tunes the magnetic field, the Hanle curve is given by
 \begin{equation}
   \label{eq:regime.1.f}
   f = \frac{\sqrt{ω τ}}{\left( λ / r \right)^2}
       e^{- \left( L / λ \right) \sqrt{ω τ / 2}}
-      \sin{\left[ \frac{L}{λ} \sqrt{\frac{ω τ}{2}} + \frac{π}{4} \right]} .
+      \sin{\left[ \frac{L}{λ} \sqrt{\frac{ω τ}{2}} + \frac{π}{4} \right]} ,
 \end{equation}
 as long as $λ / r ≫ \sqrt{ω τ} ≫ 1$.
 In this limit, the nonlocal resistance scales as
@@ -92,7 +93,8 @@ and the normalized nonlocal resistance as
   f / f_0 ∝ \sqrt{ω τ} .
 \end{equation}
 
-On further increasing the field ($\sqrt{ω τ} ≫ λ / r ≫ 1$) we get
+On further increasing the field,
+$\sqrt{ω τ} ≫ λ / r ≫ 1$, we get
 \begin{equation}
   \label{eq:regime.2.f}
   f = \frac{1}{2 \sqrt{ω τ}}
@@ -127,13 +129,14 @@ In particular, they were numerically shown to severely underestimate the spin li
 \cite{PhysRevB.86.235408}.
 
 Further analytic progress can be made if one assumes that
-the lifetimes as estimated with infinite contact resistance are long
+lifetimes as estimated with infinite contact resistance are long
 enough that the approximation of $\sqrt{ω τ} ≫ λ / r ≫ 1$
 is still valid for much of the data being analyzed.
-For this case the infinite contact resistance yields a normalized $\rNL$ of the form
+For this case, at infinite contact resistance,
+the normalized nonlocal resistance is given by
 \begin{equation}
   \frac{f^∞}{f^∞_0} = \frac{1}{ \sqrt{ω τ}}
-                      e^{- \left( L / λ \right) (\sqrt{ω τ / 2})}
+                      e^{- \left( L / λ \right) \sqrt{ω τ / 2}}
                       \cos{\left[ \frac{L}{λ} \sqrt{\frac{ω τ}{2}} + \frac{π}{4} \right]} .
 \end{equation}
 Provided $D$ remains constant,
