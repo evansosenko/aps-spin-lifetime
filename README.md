@@ -9,7 +9,7 @@
 - `xelatex`, [`la­texmk`](http://www.ctan.org/pkg/latexmk/),
   and [`latexpand`](http://www.ctan.org/pkg/latexpand/)
   packaged with a modern LaTeX distribution,
-  e.g., [TeX Live](http://www.tug.org/texlive/)..
+  e.g., [TeX Live](http://www.tug.org/texlive/).
 - [Bower](http://bower.io/) available via
   [Node Packaged Modules](https://npmjs.org/)
 - [Ruby 2](https://www.ruby-lang.org/)
