@@ -6,7 +6,7 @@
 
 ## Requirements
 
-- `xelatex`, [`la­texmk`](http://www.ctan.org/pkg/latexmk/),
+- `xelatex`, [`latexmk`](http://www.ctan.org/pkg/latexmk/),
   and [`latexpand`](http://www.ctan.org/pkg/latexpand/)
   packaged with a modern LaTeX distribution,
   e.g., [TeX Live](http://www.tug.org/texlive/).
