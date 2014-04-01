@@ -6,7 +6,7 @@
   "license": "Copyright 2014 Evan Sosenko",
   "private": true,
   "dependencies": {
-    "tkiz-nonlocal_spin_valve": "git@github.com:razor-x/tkiz-nonlocal_spin_valve.git",
+    "tkiz-nonlocal_spin_valve": "git@github.com:razor-x/tkiz-nonlocal_spin_valve.git#v1.0",
     "references": "https://github.com/razor-x/references.git"
   }
 }
