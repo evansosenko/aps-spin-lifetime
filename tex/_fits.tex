@@ -23,6 +23,18 @@ Hanle fits were done using a simple least squares algorithm
 with parameters $τ$, $D$, $R_C$, and $P$.
 The polarization $P$ was constrained between zero and one.
 
+\begin{figure}
+  \caption{
+    Data in fig. 4 from \cite{PhysRevLett.105.167202}
+    fit to \cref{eq:nonlocal_resistance.difference}
+    with the following values: \plotDifferenceInfo.
+    The contact type (tunneling, transparent)
+    and the contact separation $L$ varies.
+  }
+  \label{fig:nonlocal_resistance.difference}
+  \includegraphics[width=\columnwidth]{figures/plot_difference}
+\end{figure}
+
 \Cref{fig:nonlocal_resistance.difference} shows fits of
 $Δ \rNL$ given by \cref{eq:nonlocal_resistance.difference}
 for devices with tunneling and transparent contacts.
@@ -37,14 +49,13 @@ while for transparent contacts, $P$ is reduced by an order of magnitude.
 
 \begin{figure}
   \caption{
-    Data in fig. 4 from \cite{PhysRevLett.105.167202}
-    fit to \cref{eq:nonlocal_resistance.difference}
-    with the following values: \plotDifferenceInfo.
-    The contact type (tunneling, transparent)
-    and the contact separation $L$ varies.
+    Data in fig. 4 (c) from \cite{PhysRevLett.105.167202}
+    fit to \cref{eq:nonlocal_resistance}
+    with the following values: \plotParallelInfo.
+    The contact is pinhole type.
   }
-  \label{fig:nonlocal_resistance.difference}
-  \includegraphics[width=\columnwidth]{figures/plot_difference}
+  \label{fig:nonlocal_resistance.pinhole}
+  \includegraphics[width=\columnwidth]{figures/plot_parallel}
 \end{figure}
 
 \Cref{fig:nonlocal_resistance.pinhole} shows a fit of
@@ -70,13 +81,3 @@ in \cref{fig:nonlocal_resistance.difference,fig:nonlocal_resistance.pinhole}
 results from the built-in accuracy we demand of the fitting algorithm.
 A good fit can also be obtained for any $r$ as long as it is larger than $λ$.
 
-\begin{figure}
-  \caption{
-    Data in fig. 4 (c) from \cite{PhysRevLett.105.167202}
-    fit to \cref{eq:nonlocal_resistance}
-    with the following values: \plotParallelInfo.
-    The contact is pinhole type.
-  }
-  \label{fig:nonlocal_resistance.pinhole}
-  \includegraphics[width=\columnwidth]{figures/plot_parallel}
-\end{figure}
