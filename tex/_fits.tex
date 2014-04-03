@@ -20,7 +20,7 @@ where $A_J$ is the junction area estimated at $A_J = W d$,
 with $d$ between \SIrange[range-phrase={ and }]{0.5}{50}{\nano \meter}
 \cite{PhysRevLett.105.167202}.
 Hanle fits were done using a simple least squares algorithm
-with parameters $τ$, $D$, $R_C$, and $P$.
+with nonnegative parameters $τ$, $D$, $R_C$, and $P$.
 The polarization $P$ was constrained between zero and one.
 
 \begin{figure}
@@ -28,7 +28,7 @@ The polarization $P$ was constrained between zero and one.
     Data in fig. 4 from \cite{PhysRevLett.105.167202}
     fit to \cref{eq:nonlocal_resistance.difference}
     with the following values: \plotDifferenceInfo.
-    The contact type (tunneling, transparent)
+    The contact type (tunneling or transparent)
     and the contact separation $L$ varies.
   }
   \label{fig:nonlocal_resistance.difference}
@@ -39,11 +39,11 @@ The polarization $P$ was constrained between zero and one.
 $Δ \rNL$ given by \cref{eq:nonlocal_resistance.difference}
 for devices with tunneling and transparent contacts.
 Fits (a) and (b) with tunneling contacts give large
-$R_C ∼ \SI{10e7}{\kilo \ohm}$ and lifetimes equivalent to fitting with $R_C → ∞$,
+$R_C ∼ \SI{e7}{\kilo \ohm}$ and lifetimes equivalent to fitting with $R_C → ∞$,
 while (d) with transparent contacts gives a reduced $R_C ∼ \SI{3}{\kilo \ohm}$
 and a lifetime increased by at most a factor of two
 (compare to \SI{78}{\pico \second} for $R_C → ∞$).
-The polarization $P$ for tunneling contacts is \SI{7}{\percent}
+For tunneling contacts, the polarization $P$ is \SIrange{25}{60}{\percent}
 smaller than the lower bound given in \cite{PhysRevLett.105.167202},
 while for transparent contacts, $P$ is reduced by an order of magnitude.
 
@@ -73,11 +73,10 @@ helping further constrain the fitting algorithm.
 As we will discuss further in the next section, a fact that becomes apparent
 from our analytic result is that the relevant scale is $λ / r$.
 Once $r$ becomes larger than $λ$,
-all the corrections to the infinite resistance limit Hanle curves become very small.
+all of the corrections to the $R_C → ∞$ limit Hanle curves become very small.
 In other words, once $r ≫ λ$,
 the fit is insensitive to the actual value of the contact resistance.
 The fact that we quote resistance of order \SI{e7}{\kilo \ohm} in fits (a), (b), and (c)
 in \cref{fig:nonlocal_resistance.difference,fig:nonlocal_resistance.pinhole}
 results from the built-in accuracy we demand of the fitting algorithm.
 A good fit can also be obtained for any $r$ as long as it is larger than $λ$.
-
