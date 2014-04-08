@@ -94,26 +94,6 @@ and the normalized nonlocal resistance as
   f / f_0 ∝ \sqrt{ω τ} .
 \end{equation}
 
-\begin{figure}[!t]
-  \caption{
-    Data in fig. 4 (d) from \cite{PhysRevLett.105.167202}
-    fit to \cref{eq:nonlocal_resistance}
-    with the following values: \plotLargeLifetimeInfo.
-    The contact is transparent type.
-    Fits with lifetimes that differ by four orders of magnitude were obtained by using
-    different starting values and allowed maximum values for $τ$.
-    The fits are otherwise similar with the exception of the lifetime
-    demonstrating the $τ$-independent scaling in \cref{eq:regime.1.nonlocal_resistance}.
-  }
-  \label{fig:nonlocal_resistance.large_lifetime}
-  \includegraphics[width=\columnwidth]{figures/plot_large_lifetime}
-\end{figure}
-
-Note that in the limit of \cref{eq:regime.1.nonlocal_resistance},
-fitting will be insensitive to $τ$.
-\Cref{fig:nonlocal_resistance.large_lifetime} shows nearly identical fits
-with lifetimes that differ by four orders of magnitude.
-
 On further increasing the field,
 $\sqrt{ω τ} ≫ λ / r ≫ 1$, we get
 \begin{equation}
@@ -140,6 +120,28 @@ and are determined by $D$ though the condition
   L \sqrt{\frac{D}{2 ω}} + \frac{π}{4} = \frac{n π}{2} ,
 \end{equation}
 where $n = 0$ for \cref{eq:regime.1.f} and $n = 1$ for \cref{eq:regime.2.f}.
+
+\begin{figure}[!b]
+  \caption{
+    Data in fig. 4 (d) from \cite{PhysRevLett.105.167202}
+    fit to \cref{eq:nonlocal_resistance}
+    with the following values: \plotLargeLifetimeInfo.
+    The contact is transparent type.
+    Fits with lifetimes that differ by four orders of magnitude were obtained by using
+    different starting values and allowed maximum values for $τ$.
+    The fits are otherwise similar with the exception of the lifetime,
+    demonstrating the $τ$-independent scaling in \cref{eq:regime.2.nonlocal_resistance}.
+  }
+  \label{fig:nonlocal_resistance.large_lifetime}
+  \includegraphics[width=\columnwidth]{figures/plot_large_lifetime}
+\end{figure}
+
+Note that in the limits of
+\cref{eq:regime.1.nonlocal_resistance,eq:regime.2.nonlocal_resistance},
+fitting will be insensitive to $τ$.
+As an example of this,
+\Cref{fig:nonlocal_resistance.large_lifetime} shows nearly identical fits
+with lifetimes that differ by four orders of magnitude.
 
 The evolution of the expression for the Hanle curve
 is an interesting insight into the behavior of the device.
