@@ -1,4 +1,5 @@
 require 'active_support/core_ext/string'
+require 'yaml'
 
 name = 'aps-spin-lifetime'
 build_name = 'APS Spin Lifetime'
@@ -37,25 +38,53 @@ end
 
 desc 'Build a single LaTeX file for submission.'
 task expand: [:clean] do
-  out = File.join build, name
-  out_file = File.join out, "#{name}.tex"
-  FileUtils.remove_entry_secure out
+  tex_map = 'map_pdftex.yml'
+  bib_map = File.join tex_src, 'components', 'references', 'map_bibtex.yml'
+  maps = {}
+  maps[:tex] = YAML.load_file tex_map if File.exists? tex_map
+  maps[:bib] = YAML.load_file bib_map if File.exists? bib_map
+
+  tex_src_path = File.expand_path tex_src
+  out = File.expand_path File.join(build, name)
+  out_file = File.expand_path File.join(out, "#{name}.tex")
+
+  FileUtils.remove_entry_secure out if Dir.exists? out
   FileUtils.mkdir_p out
-  Dir.chdir tex_src do
-    system 'latexpand', '--keep-comments', '-o', '#{name}.expanded.tex', "#{name}.tex"
-    FileUtils.mv '#{name}.expanded.tex', File.join('../', out_file)
-    %w(spintronics software).each do |f|
-      FileUtils.cp File.join('components', 'references', "#{f}.bib"), File.join('../', out)
+
+  Dir.mktmpdir do |dir|
+    FileUtils.cp_r tex_src_path, dir
+
+    Dir.chdir File.join(dir, tex_src) do
+      src_file = File.expand_path "#{name}.tex"
+
+      text = File.read src_file
+      text.gsub! '_preamble.xelatex', '_preamble.pdftex'
+      text.gsub! '_header.xelatex', '_header.pdftex'
+      File.open(src_file, 'w') { |f| f.puts text }
+
+      system 'latexpand', '--keep-comments', '-o', '#{name}.expanded.tex', src_file
+      FileUtils.mv '#{name}.expanded.tex', out_file
+      %w(spintronics software).each do |f|
+        FileUtils.cp File.join('components', 'references', "#{f}.bib"), out
+      end
+      %w(figures).each { |d| FileUtils.cp_r d, out }
     end
-    %w(figures).each { |d| FileUtils.cp_r d, File.join('../', out) }
   end
   Dir.chdir out do
     Dir[File.join('figures', '*.tex')].each { |f| FileUtils.remove_entry_secure f }
     FileUtils.cp_r Dir['figures/*'], '.'
     FileUtils.remove_entry_secure 'figures'
+
+    text = File.read out_file
+    text.gsub! 'components/references/', ''
+    text.gsub! 'figures/', ''
+    maps[:tex].each { |m| text.gsub! m[0], m[1] } if maps[:tex]
+    File.open(out_file, 'w') { |f| f.puts text }
+
+    Dir["*.bib"].each do |bib_file|
+      text = File.read bib_file
+      maps[:bib].each { |m| text.gsub! m[0], m[1] }
+      File.open(bib_file, 'w') { |f| f.puts text }
+    end if maps[:bib]
   end
-  text = File.read(out_file)
-  text.gsub!('components/references/', '')
-  text.gsub!('figures/', '')
-  File.open(out_file, 'w') { |f| f.puts text }
 end
