@@ -5,4 +5,4 @@
 # the corresponding LaTeX macros.
 # This should not be needed when using XeLaTeX.
 - [±, "{±}"]
-- [ȷ, '\j']
+- [ȷ, '\jmath']
