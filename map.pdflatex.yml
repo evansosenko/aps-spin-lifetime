@@ -1,0 +1,8 @@
+# Some special characters and syntax throw errors
+# when used with pdfLaTeX, even with UTF-8 support enabled.
+# This is a list of replacement rules that
+# can be used to replace the offending code with
+# the corresponding LaTeX macros.
+# This should not be needed when using XeLaTeX.
+- [±, "{±}"]
+- [ȷ, '\j']

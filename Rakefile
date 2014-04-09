@@ -36,10 +36,10 @@ task :clean do
   end
 end
 
-desc 'Build a single LaTeX file for submission.'
+desc 'Build a single LaTeX file for submission (for use with pdfLaTeX).'
 task expand: [:clean] do
-  tex_map = 'map_pdftex.yml'
-  bib_map = File.join tex_src, 'components', 'references', 'map_bibtex.yml'
+  tex_map = 'map.pdflatex.yml'
+  bib_map = File.join tex_src, 'components', 'references', 'map.pdflatex.yml'
   maps = {}
   maps[:tex] = YAML.load_file tex_map if File.exists? tex_map
   maps[:bib] = YAML.load_file bib_map if File.exists? bib_map
@@ -58,8 +58,8 @@ task expand: [:clean] do
       src_file = File.expand_path "#{name}.tex"
 
       text = File.read src_file
-      text.gsub! '_preamble.xelatex', '_preamble.pdftex'
-      text.gsub! '_header.xelatex', '_header.pdftex'
+      text.gsub! '_preamble.xelatex', '_preamble.pdflatex'
+      text.gsub! '_header.xelatex', '_header.pdflatex'
       File.open(src_file, 'w') { |f| f.puts text }
 
       system 'latexpand', '--keep-comments', '-o', '#{name}.expanded.tex', src_file
