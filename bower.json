@@ -7,6 +7,6 @@
   "private": true,
   "dependencies": {
     "tikz-nonlocal_spin_valve": "git@github.com:razor-x/tikz-nonlocal_spin_valve.git#v1.1",
-    "references": "https://github.com/razor-x/references.git#694a162ab761e22b28ade71f169141197ddd8084"
+    "references": "https://github.com/razor-x/references.git#faf4cacd41ee82e84c4bdc5d872c69d3c42eb4bf"
   }
 }
