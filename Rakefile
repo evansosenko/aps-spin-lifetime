@@ -12,6 +12,7 @@ task build: [:tex]
 
 desc 'Compile LaTeX to PDF.'
 task :tex do
+  build = File.expand_path build
   FileUtils.mkdir_p build
   path = File.join tex_src, "#{name}.tex"
 
@@ -19,7 +20,7 @@ task :tex do
 
   Dir.chdir tex_src do
     system 'latexmk', '-xelatex', '-f', "#{name}.tex"
-    FileUtils.mv "#{name}.pdf", File.join('../', build, "#{build_name}.pdf")
+    FileUtils.mv "#{name}.pdf", File.join(build, "#{build_name}.pdf")
   end
 end
 
