@@ -36,7 +36,9 @@ task :clean do
   end
 end
 
-desc 'Build a single LaTeX file for submission (for use with pdfLaTeX).'
+desc "Build a single LaTeX file for submission (for use with pdfLaTeX).\
+  \nWill be placed in build/aps-spin-lifetime.\
+  \nAn archive will be created at build/aps-spin-lifetime.tar.gz."
 task expand: [:clean] do
   tex_map = 'map.pdflatex.yml'
   bib_map = File.join tex_src, 'components', 'references', 'map.pdflatex.yml'
@@ -47,7 +49,8 @@ task expand: [:clean] do
   tex_src_path = File.expand_path tex_src
   out = File.expand_path File.join(build, name)
   out_file = File.expand_path File.join(out, "#{name}.tex")
-
+  tar_file = File.expand_path File.join(build, "#{name}.tar.gz")
+  FileUtils.remove_entry_secure tar_file if File.exists? tar_file
   FileUtils.remove_entry_secure out if Dir.exists? out
   FileUtils.mkdir_p out
 
@@ -62,8 +65,8 @@ task expand: [:clean] do
       text.gsub! '_header.xelatex', '_header.pdflatex'
       File.open(src_file, 'w') { |f| f.puts text }
 
-      system 'latexpand', '--keep-comments', '-o', '#{name}.expanded.tex', src_file
-      FileUtils.mv '#{name}.expanded.tex', out_file
+      system 'latexpand', '--keep-comments', '-o', "#{name}.expanded.tex", src_file
+      FileUtils.mv "#{name}.expanded.tex", out_file
       %w(spintronics software).each do |f|
         FileUtils.cp File.join('components', 'references', "#{f}.bib"), out
       end
@@ -86,5 +89,16 @@ task expand: [:clean] do
       maps[:bib].each { |m| text.gsub! m[0], m[1] }
       File.open(bib_file, 'w') { |f| f.puts text }
     end if maps[:bib]
+
+    system 'latexmk', '-pdf', "#{name}.tex"
+    system 'latexmk', '-c'
+    system 'latexpand', '--keep-comments', '--expand-bbl', "#{name}.bbl", '-o', "#{name}.expanded.tex", out_file
+    FileUtils.mv "#{name}.expanded.tex", out_file
+
+    %w(pdf bib bbl).each do |ext|
+      Dir["*.#{ext}"].each { |f| File.unlink f }
+    end
   end
+
+  system 'tar', '-cz', '-f', tar_file, '-C', build, name
 end
