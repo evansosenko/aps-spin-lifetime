@@ -6,3 +6,4 @@
 # This should not be needed when using XeLaTeX.
 - [±, "{±}"]
 - [ȷ, '\jmath']
+- [ρ, '\rho']
