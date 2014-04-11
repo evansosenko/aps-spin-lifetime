@@ -46,6 +46,12 @@ tex/components/
 *.synctex.gz(busy)
 *.pdfsync
 
+## Mac specific
+*.mp
+*.tmp
+*.tui
+*.tuo
+
 ## Auxiliary and intermediate files from other packages:
 
 # algorithms
