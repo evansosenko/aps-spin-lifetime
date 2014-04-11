@@ -127,23 +127,41 @@ where $n = 0$ for \cref{eq:regime.1.f} and $n = 1$ for \cref{eq:regime.2.f}.
   \caption{
     Data in figure 4 (d) from \cite{PhysRevLett.105.167202}
     fit to \cref{eq:nonlocal_resistance}
-    with the following values: \plotLargeLifetimeInfo.
-    The contact is transparent type.
-    Fits with lifetimes that differ by four orders of magnitude were obtained by using
-    different starting values and allowed maximum values for $τ$.
-    The fits are otherwise similar with the exception of the lifetime,
-    demonstrating the $τ$-independent scaling in \cref{eq:regime.2.nonlocal_resistance}.
+    with the same values as in
+    \cref{fig:nonlocal_resistance.difference} (d).
+    Fits with lifetimes that differ by four orders of magnitude
+    were obtained by using different starting values for $τ$.
+    These fits are otherwise similar with the exception of the lifetime,
+    demonstrating the $τ$-independent scaling in \cref{eq:regime.1.nonlocal_resistance}.
+    The $χ^2$ for \cref{fig:nonlocal_resistance.difference} (d)
+    is \SI{2}{\percent} less than the $χ^2$ for
+    \cref{fig:nonlocal_resistance.large_lifetime}.
   }
   \label{fig:nonlocal_resistance.large_lifetime}
   \includegraphics[width=\columnwidth]{figures/plot_large_lifetime}
 \end{figure}
 
-Note that in the limits of
-\cref{eq:regime.1.nonlocal_resistance,eq:regime.2.nonlocal_resistance},
-fitting will be insensitive to $τ$.
+Note that fitting is insensitive to $τ$ in the limit of
+\cref{eq:regime.1.nonlocal_resistance}
+or \cref{eq:regime.2.nonlocal_resistance}.
 As an example of this,
-\Cref{fig:nonlocal_resistance.large_lifetime} shows nearly identical fits
+\cref{fig:nonlocal_resistance.large_lifetime} shows nearly identical fits
 with lifetimes that differ by four orders of magnitude.
+These fits were obtained by choosing large starting values for $τ$.
+For \cref{fig:nonlocal_resistance.difference} (d)
+and \cref{fig:nonlocal_resistance.large_lifetime},
+$χ^2 ∼ \SI{7e-8}{}$, but the $χ^2$ for
+\cref{fig:nonlocal_resistance.difference} (d)
+is \SI{2}{\percent} less than the $χ^2$ for
+\cref{fig:nonlocal_resistance.large_lifetime}.
+In \cref{fig:nonlocal_resistance.difference} (d),
+$λ / r ≫ \sqrt{ω τ}$ and $ω τ ∼ 1$ for most of the curve,
+so the approximation $1 + i ω τ ≈ i ω τ$ does not hold.
+However, \cref{fig:nonlocal_resistance.large_lifetime}
+is in the limit of \cref{eq:regime.1.nonlocal_resistance}
+for all points (save the origin).
+Thus, in limit of small $r$, the fitted value of $τ$ is unreliable
+unless one carefully controls the fitting procedure.
 
 The evolution of the expression for the Hanle curve
 is an interesting insight into the behavior of the device.
