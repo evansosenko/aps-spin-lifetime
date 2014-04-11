@@ -318,7 +318,7 @@ Inside the semiconductor, $u$ satisfies the diffusion equation
 Here, $D$ is the diffusion constant, $τ$ the spin lifetime,
 and $ω = \left( g μ_B / ℏ \right) B$ is proportional to the applied magnetic field
 (with $g$ the gyromagnetic ratio and $μ_B$ the Bohr magneton).
-The spin diffusion length is $λ = 1 / k = \sqrt{D τ}$.
+The spin diffusion length in the semiconductor is $λ = 1 / k = \sqrt{D τ}$.
 
 The function $u = u(x)$ only varies along $x$,
 and we introduce the notation
@@ -332,7 +332,7 @@ and we introduce the notation
 \end{equation}
 with similar expressions for $u_y$ and $u_z$.
 The most general solution to \cref{eq:diffusion} decouples $u_z$ from $u_x$ and $u_y$.
-The requirement $\lim_{x → ± ∞} u(x) = 0$ yields,
+The requirement $\lim_{x → ± ∞} u(x) = 0$ yields
 \begin{subequations}
   \begin{alignat}{3}
     & u_{z±} (x) && {}={} && A^∓ e^{∓ k x}                     , \\
@@ -347,7 +347,7 @@ and
   \end{alignat}
   \begin{alignat}{12}
     & u_{x0} (x) && =   && B_0^+ e^{κ x} && {}+{} &&   && B_0^- e^{- κ x} && {}+{} &&   && C_0^+ e^{ \bar{κ} x } && {}+{} &&   && C_0^- e^{ - \bar{κ} x } , \\
-    & u_{y0} (x) && = i && B_0^+ e^{κ x} && {}+{} && i && B_0^- e^{- κ x} && {}-{} && i && C_0^+ e^{ \bar{κ} x } && {}-{} && i && C_0^- e^{ - \bar{κ} x } .
+    & u_{y0} (x) && = i && B_0^+ e^{κ x} && {}+{} && i && B_0^- e^{- κ x} && {}-{} && i && C_0^+ e^{ \bar{κ} x } && {}-{} && i && C_0^- e^{ - \bar{κ} x } ,
   \end{alignat}
 \end{subequations}
 where $κ = k \sqrt{1 + i ω τ}$.
@@ -366,8 +366,8 @@ is the sum of the spin currents on either side, i.e.,
 \end{subequations}
 The signs have been chosen to be consistent with the physical geometry.
 The only nonzero component of the current at the contacts inside the semiconductor
-is the $x$ component at $x = 0$ and we use \cref{eq:bdry_solutions.current}.
-For all other components there is zero current at the contact and we use
+is the $x$ component at $x = 0$, so we use \cref{eq:bdry_solutions.current}.
+For all other components there is zero current at the contact, and we use
 \cref{eq:bdry_solutions.zero.current}.
 Together with \cref{eq:current.sum}, this gives the other six equations,
 \begin{subequations}
@@ -387,7 +387,7 @@ where
   & Δ && = - (- J_0) \left( P_σ^F R_F + P_Σ^0 R_C^0 \right) η_0 .
   \end{alignat}
 \end{subequations}
-We define the $r$-parameter, $r_i = - η_i^{-1}$ introduced in \cref{eq:r-parameter}.
+We define the $r$-parameter, $r_i = - η_i^{-1}$, introduced in \cref{eq:r-parameter}.
 
 These equations can be organized into a matrix equation and solved algebraically.
 A solution for $u_z$ corresponds to a condition of vanishing determinant,
@@ -400,7 +400,7 @@ which can never be satisfied
 },
 thus $u_z = 0$ is the only allowed solution.
 The other two components form an eight dimensional linear system.
-Solving this gives the remaining constants and thus
+Solving this gives the remaining constants, and thus
 $u_x (L) = e^{- κ L} B^- + e^{- \bar{κ} L} C^-$.
 
 Finally, we can introduce $\rSQ$ from \cref{eq:square_resistance}
