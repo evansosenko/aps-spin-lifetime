@@ -2,8 +2,6 @@
 
 **Copyright 2014 Evan Sosenko**
 
-**Preprint / Draft**
-
 ## Requirements
 
 - `xelatex`, [`latexmk`](http://www.ctan.org/pkg/latexmk/),
