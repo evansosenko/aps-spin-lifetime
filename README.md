@@ -1,6 +1,6 @@
 # Effect of contacts on spin lifetime measurements in graphene
 
-**Copyright 2014 Evan Sosenko**
+**Preprint / Draft**
 
 ## Requirements
 
@@ -9,7 +9,7 @@
   packaged with a modern LaTeX distribution,
   e.g., [TeX Live](http://www.tug.org/texlive/).
 - [Bower](http://bower.io/) available via
-  [Node Packaged Modules](https://npmjs.org/).
+  [Node Packaged Modules](https://npmjs.org/)
 - [Ruby 2](https://www.ruby-lang.org/)
   with [Bundler](http://bundler.io/) (optional).
 
@@ -62,11 +62,11 @@ $ latexmk -xelatex aps-spin-lifetime.tex
 
 ## License
 
-This work is Copyright © 2014 Evan Sosenko.
+This work has been submitted to Physical Review B and is Copyright © 2014 by the American Physical Society.
 
 ## Warranty
 
-This work is provided "as is" and without any express or
+This software is provided "as is" and without any express or
 implied warranties, including, without limitation, the implied
 warranties of merchantibility and fitness for a particular
 purpose.
