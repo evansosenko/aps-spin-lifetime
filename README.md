@@ -1,7 +1,5 @@
 # Effect of contacts on spin lifetime measurements in graphene
 
-**Preprint / Draft**
-
 ## Requirements
 
 - `xelatex`, [`latexmk`](http://www.ctan.org/pkg/latexmk/),
