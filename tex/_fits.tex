@@ -24,22 +24,29 @@ Hanle fits were done using a simple least squares algorithm
 with nonnegative parameters $τ$, $D$, $R_C$, and $P$.
 The polarization $P$ was constrained between zero and one.
 
-\begin{figure}[b]
+\begin{figure}
   \caption{
     Data in figure 4 from \cite{PhysRevLett.105.167202}
     fit to \cref{eq:nonlocal_resistance.difference}
-    with the following values: \plotDifferenceInfo.
-    The contact type (tunneling or transparent)
+    or \cref{eq:nonlocal_resistance}
+    with the following values: \plotFitsInfo.
+    The contact type (tunneling, pinhole, or transparent)
     and the contact separation $L$ varies.
   }
   \label{fig:nonlocal_resistance.difference}
-  \includegraphics[width=\columnwidth]{figures/plot_difference}
+  \includegraphics[width=\columnwidth]{figures/plot_fits}
 \end{figure}
 
 \Cref{fig:nonlocal_resistance.difference} shows fits of
 $Δ \rNL$ given by \cref{eq:nonlocal_resistance.difference}
-for devices with tunneling and transparent contacts.
-Fits (a) and (b) with tunneling contacts give large
+for devices with tunneling and transparent contacts,
+and $\rNL^+$ given by \cref{eq:nonlocal_resistance}
+for a device with pinhole contacts
+\footnote{
+  Parallel and antiparallel data for this device was only available
+  at dissimilar field values, thus $Δ \rNL$ could not be fit.
+}.
+Fits (a), (b), and (c) with tunneling and pinhole contacts give large
 $R_C ∼ \SI{e7}{\kilo \ohm}$ and lifetimes equivalent to fitting with $R_C → ∞$,
 while (d) with transparent contacts gives a reduced $R_C ∼ \SI{3}{\kilo \ohm}$
 and a lifetime increased by at most a factor of two
@@ -47,26 +54,6 @@ and a lifetime increased by at most a factor of two
 For tunneling contacts, the polarization $P$ is \SIrange{25}{60}{\percent}
 smaller than the lower bound given in \cite{PhysRevLett.105.167202},
 while for transparent contacts, $P$ is reduced by an order of magnitude.
-
-\begin{figure}
-  \caption{
-    Data in figure 4 (c) from \cite{PhysRevLett.105.167202}
-    fit to \cref{eq:nonlocal_resistance}
-    with the following values: \plotParallelInfo.
-    The contact is pinhole type.
-  }
-  \label{fig:nonlocal_resistance.pinhole}
-  \includegraphics[width=\columnwidth]{figures/plot_parallel}
-\end{figure}
-
-\Cref{fig:nonlocal_resistance.pinhole} shows a fit of
-$\rNL^+$ given by \cref{eq:nonlocal_resistance}
-with $p_1 p_2 → P^2$ for a device with pinhole contacts
-\footnote{
-  Parallel and antiparallel data for this device was only available
-  at dissimilar field values, thus $Δ \rNL$ could not be fit.
-}.
-The lifetime is equivalent to fitting with $R_C → ∞$.
 
 Note that we have used $R_C$ as a fitting parameter.
 In most devices, this quantity can be experimentally determined,
