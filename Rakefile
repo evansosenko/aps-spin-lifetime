@@ -99,6 +99,5 @@ task expand: [:clean] do
       Dir["*.#{ext}"].each { |f| File.unlink f }
     end
   end
-  p out
   system 'tar', '-cz', '-f', tar_file, '-C', out, '.'
 end
