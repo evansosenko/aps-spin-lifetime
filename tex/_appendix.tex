@@ -229,16 +229,12 @@ flows down through the contact at $x = 0$
 and to the left in the semiconductor for $x ≤ 0$,
 and no current flows for $x > 0$.
 The experimentally measured quantity is the
-ohmic nonlocal resistance $\rNL^Ω = V_L / I_0$
-\footnote{
-  Outside of the appendix we drop the superscript and use $\rNL$
-  to refer to the ohmic nonlocal resistance.
-},
+nonlocal resistance $\rNL = V_L / I_0$,
 where $I_0 = - W L J_0 / e$ is the current through the contact at $x = 0$.
-It is convenient to introduce the effective nonlocal resistance $\rNL$
+It is convenient to introduce the effective nonlocal resistance $\rNLeff$
 defined by
 \begin{equation}
-  \rNL = W L \rNL^Ω = - e V_L / J_0 = \frac{\bar{μ}_c^F - \bar{μ}_c^N}{J_0} .
+  \rNLeff = W L \rNL = - e V_L / J_0 = \frac{\bar{μ}_c^F - \bar{μ}_c^N}{J_0} .
 \end{equation}
 To determine $\rNL$, we must express the difference
 of these chemical potentials in terms of $μ_s^N (L)$.
@@ -300,8 +296,8 @@ we find
 \begin{equation}
   \label{eq:rnl.full}
   \begin{aligned}
-    \rNL & = \left( ψ_L - v_L \right) - P_σ^F φ_L \\
-         & = \left[ P_Σ^L \left( 1 - \frac{R_F}{R_F + R_C^L} \right) - \frac{P_σ^F R_F}{R_F + R_C^L} \right] \frac{u_x (L)}{J_0} .
+    \rNLeff & = \left( ψ_L - v_L \right) - P_σ^F φ_L \\
+            & = \left[ P_Σ^L \left( 1 - \frac{R_F}{R_F + R_C^L} \right) - \frac{P_σ^F R_F}{R_F + R_C^L} \right] \frac{u_x (L)}{J_0} .
   \end{aligned}
 \end{equation}
 
@@ -407,6 +403,6 @@ Finally, we can introduce $\rSQ$ from \cref{eq:square_resistance}
 and the polarizations given in \cref{eq:polarizations}
 by using $p_1 = - σ^N Δ / J_0$ along with \cref{eq:rnl.full} to write
 \begin{equation}
-  \frac{\rNL}{\rSQ} = \frac{p_1 p_2}{W / λ} \left[ - \frac{k u_x (L)}{Δ} \right] .
+  \frac{\rNLeff}{\rSQ} = \frac{p_1 p_2}{W / λ} \left[ - \frac{k u_x (L)}{Δ} \right] .
 \end{equation}
 The term in brackets is the function $f$ given in \cref{eq:f}.
