@@ -50,6 +50,7 @@ task expand: [:clean] do
   out = File.expand_path File.join(build, name)
   out_file = File.expand_path File.join(out, "#{name}.tex")
   tar_file = File.expand_path File.join(build, "#{name}.tar.gz")
+  fig_1 = 'nonlocal_spin_valve'
   FileUtils.remove_entry_secure tar_file if File.exists? tar_file
   FileUtils.remove_entry_secure out if Dir.exists? out
   FileUtils.mkdir_p out
@@ -70,7 +71,15 @@ task expand: [:clean] do
       %w(spintronics software).each do |f|
         FileUtils.cp File.join('components', 'references', "#{f}.bib"), out
       end
+
       %w(figures).each { |d| FileUtils.cp_r d, out }
+
+      Dir.chdir File.join('components', 'tikz-nonlocal_spin_valve', 'tex') do
+        system 'latexmk', '-pdf', "#{fig_1}.tex"
+        system 'convert', '-density', '600x600', "#{fig_1}.pdf", "#{fig_1}.png"
+        FileUtils.copy "#{fig_1}.png", File.join(out, 'figures')
+        FileUtils.copy "#{fig_1}.pdf", File.join(out, 'figures')
+      end
     end
   end
   Dir.chdir out do
@@ -96,7 +105,7 @@ task expand: [:clean] do
     FileUtils.mv "#{name}.expanded.tex", out_file
 
     %w(pdf bib bbl).each do |ext|
-      Dir["*.#{ext}"].each { |f| File.unlink f }
+      Dir["*.#{ext}"].each { |f| File.unlink f unless f == "#{fig_1}.pdf" }
     end
   end
   system 'tar', '-cz', '-f', tar_file, '-C', out, '.'
