@@ -19,55 +19,32 @@
   \end{tikzpicture}
 \end{figure}
 
-The assumed device geometry is shown in \cref{fig:nonlocal_spin_valve},
-and the nonlocal resistance is $\rNL = V / I$ \cite{PhysRevB.67.052409}
-(see also \cref{s:appendix:nonlocal_resistance}).
+The assumed device geometry is shown in \cref{fig:nonlocal_spin_valve}.
+Two ferromagnetic contacts ($F$) are deposited on the normal semiconductor ($N$).
+A spin-polarized current $I$ is injected through the contact at $x = 0$
+and flows in the $x ≤ 0$ region of the semiconductor.
+The voltage difference $V$ is measured at $x = L$ between the contact and the semiconductor.
+The nonlocal resistance is $\rNL = V / I$ \cite{PhysRevB.67.052409}.
 The key parameters are
 the contact spacing $L$,
 the diffusion constant $D$,
 the spin lifetime $τ$,
 the spin diffusion length $λ = \sqrt{D τ}$,
-and $ω = \left( g μ_B / ℏ \right) B$ which is proportional to the applied magnetic field $B$.
-Any symbols not defined in the body of this paper can be found in \cref{s:appendix}.
+and $ω = \left( g μ_B / ℏ \right) B$ which is proportional to
+the applied magnetic field $B$ and the gyromagnetic ratio $g$.
 
-We find the nonlocal resistance may be written in the form
+A detailed derivation is given in \cref{s:appendix}
+and reveals the nonlocal resistance may be written in the form
 \begin{equation}
   \label{eq:nonlocal_resistance}
-  \rNL^± = ± p_1 p_2 R_N f ,
+  \rNL^± = ± p_1 p_2 R_N f .
 \end{equation}
-where $p_1, p_2$ depend on the polarizations, $R_N$ is a resistance scale,
-and $f$ is unitless and depends only on the scales $L / λ$, $ω τ$, and $λ / r_i$.
 The overall sign corresponds to parallel and antiparallel ferromagnetic alignments.
-The parameters $r_i$ with $i$ either $0$ for the left contact or $L$ for the right are
-\begin{equation}
-  \label{eq:r-parameter}
-  r_i = \frac{R_F + R_C^i}{\rSQ} W ,
-\end{equation}
-where $R_F$ is the resistances of the ferromagnet
-and $R_C^i$ are the contact resistances
-\footnote{
-  The resistances $R_F, R_C^i$ are the effective resistances
-  of a unit cross sectional area.
-  To obtain an expression in terms of the ohmic resistances,
-  one must make the substitutions
-  $R_F → W_F W R_F$,
-  $R_C^i → W_F W R_C^i$,
-  where $W_F$ is the contact width, i.e., $W_F W$ is the contact area.
-  We will use the same symbols for either resistance type when the meaning is clear.
-},
-$W$ is the graphene flake width, and
-\begin{equation}
-  \label{eq:square_resistance}
-  \rSQ = W / σ^N ,
-\end{equation}
-is the graphene square (sheet) resistance.
-
-A detailed derivation is given in \cref{s:appendix}.
-Specifically, we find a resistance
+Specifically, we find a resistance scale
 \begin{equation}
   R_N = \frac{λ}{W L} \frac{1}{σ^N} ,
 \end{equation}
-polarizations given by
+polarizations
 \begin{subequations}
   \label{eq:polarizations}
   \begin{align}
@@ -89,6 +66,32 @@ and the function
         \right)^{-1} \right\} } .
   \end{equation}
 \end{widetext}
+
+Note that $f$ is unitless and depends only on the scales $L / λ$, $ω τ$, and $λ / r_i$.
+The parameters $r_i$ with $i$ either $0$ for the left contact or $L$ for the right are
+\begin{equation}
+  \label{eq:r-parameter}
+  r_i = \frac{R_F + R_C^i}{\rSQ} W ,
+\end{equation}
+where $R_F$ is the resistance of the ferromagnet
+and $R_C^i$ are the individual contact resistances,
+$W$ is the graphene flake width, and
+\begin{equation}
+  \label{eq:square_resistance}
+  \rSQ = W / σ^N ,
+\end{equation}
+is the graphene square (sheet) resistance
+given in terms of the semiconductor conductivity $σ^N$.
+The resistances $R_F$ and $R_C^i$ are the effective resistances
+of a unit cross sectional area.
+They are defined in \cref{eq:contact.resistance,eq:ferromagnet.resistance}.
+To obtain an expression in terms of the ohmic resistances,
+one must make the substitutions
+$R_F → W_F W R_F$ and $R_C^i → W_F W R_C^i$,
+where $W_F$ is the contact width, i.e., $W_F W$ is the contact area.
+We will use the same symbols for either resistance type when the meaning is clear.
+The spin polarization of the semiconductor $P_σ^F$ is defined in \cref{eq:material.polarization},
+and the spin polarizations of the individual contacts are defined in \cref{eq:contact.polarization}.
 
 The expression $Δ \rNL = \abs{\rNL^+ - \rNL^-}$
 measures the difference in signal between parallel and antiparallel field alignments.

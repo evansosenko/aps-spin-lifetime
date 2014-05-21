@@ -29,6 +29,8 @@ of the spin-up and spin-down conductances,
   \begin{alignat}{2}
     & σ   && = σ_↑ + σ_↓ , \\
     & σ_s && = σ_↑ - σ_↓ , \\
+    %
+    \label{eq:material.polarization}
     & P_σ && = \frac{σ_s}{σ} .
   \end{alignat}
 \end{subequations}
@@ -55,6 +57,8 @@ of the spin-up and spin-down contact conductances,
   \begin{alignat}{2}
     & Σ   && = Σ_↑ + Σ_↓ , \\
     & Σ_s && = Σ_↑ - Σ_↓ , \\
+    %
+    \label{eq:contact.polarization}
     & P_Σ && = \frac{Σ_s}{Σ} .
   \end{alignat}
 \end{subequations}
@@ -125,6 +129,7 @@ Using \cref{eq:contact_conductances,eq:contact_currents.2},
 \end{equation}
 where the contact resistance is
 \begin{equation}
+  \label{eq:contact.resistance}
   R_C^i = \frac{Σ^i}{4 Σ_↑^i Σ_↓^i} .
 \end{equation}
 The superscript $i$ allows for contacts with difference conductances.
@@ -168,6 +173,7 @@ Putting this into \cref{eq:bdry_current} and evaluating it at the contact gives
 \end{equation}
 where the ferromagnet resistance is
 \begin{equation}
+  \label{eq:ferromagnet.resistance}
   R_F = \frac{σ^F}{ 4 σ_↑^F σ_↓^F k_F } .
 \end{equation}
 Here, $λ_F = 1 / k_F$ is the spin diffusion length in the ferromagnet.
