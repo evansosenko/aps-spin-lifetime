@@ -405,9 +405,18 @@ The other two components form an eight dimensional linear system.
 Solving this gives the remaining constants, and thus
 $u_x (L) = e^{- κ L} B^- + e^{- \bar{κ} L} C^-$.
 
-Finally, we can introduce $\rSQ$ from \cref{eq:square_resistance}
-and the polarizations given in \cref{eq:polarizations}
-by using $p_1 = - σ^N Δ / J_0$ along with \cref{eq:rnl.full} to write
+Finally, by using $p_1 = - σ^N Δ / J_0$ along with \cref{eq:rnl.full},
+we can introduce $\rSQ$ from \cref{eq:square_resistance}
+and the polarizations
+\begin{subequations}
+  \label{eq:polarizations}
+  \begin{align}
+    p_1 & = \frac{P_σ^F R_F + P_Σ^L R_C^L}{R_F + R_C^L} , \\
+    p_2 / p_1 & = \left. \left( 1 - \frac{P_σ^F R_F}{P_Σ^L R_C^L} \right) \middle/
+                  \left(1 + \frac{P_σ^F R_F}{P_Σ^L R_C^L} \right) \right. ,
+  \end{align}
+\end{subequations}
+to write
 \begin{equation}
   \frac{\rNLeff}{\rSQ} = \frac{p_1 p_2}{W / λ} \left[ - \frac{k u_x (L)}{Δ} \right] .
 \end{equation}
