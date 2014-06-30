@@ -60,7 +60,10 @@ $ latexmk -xelatex aps-spin-lifetime.tex
 
 ## License
 
-This work has been submitted to Physical Review B and is Copyright © 2014 by the American Physical Society.
+This work was published 23 June 2014 as Phys. Rev. B 89, 245436
+by Evan Sosenko, Huazhou Wei, and Vivek Aji:
+[Effect of contacts on spin lifetime measurements in graphene](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.89.245436),
+and is Copyright © 2014 by the American Physical Society.
 
 ## Warranty
 

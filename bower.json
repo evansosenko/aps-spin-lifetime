@@ -3,7 +3,7 @@
   "authors": [
     "Evan Sosenko <razorx@evansosenko.com>"
   ],
-  "license": "Copyright 2014 Evan Sosenko",
+  "license": "Copyright 2014 by the American Physical Society",
   "private": true,
   "dependencies": {
     "tikz-nonlocal_spin_valve": "https://github.com/razor-x/tikz-nonlocal_spin_valve.git#v1.2",
