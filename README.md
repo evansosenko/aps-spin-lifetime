@@ -1,5 +1,7 @@
 # Effect of contacts on spin lifetime measurements in graphene
 
+[![All rights reserved](https://img.shields.io/badge/license-All_rights_reserved-blue.svg)](./LICENSE.txt)
+
 ## Requirements
 
 - `xelatex`, [`latexmk`](http://www.ctan.org/pkg/latexmk/),
