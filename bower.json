@@ -6,7 +6,7 @@
   "license": "Copyright 2014 by the American Physical Society",
   "private": true,
   "dependencies": {
-    "tikz-nonlocal_spin_valve": "https://github.com/razor-x/tikz-nonlocal_spin_valve.git#v1.2",
-    "references": "https://github.com/razor-x/references.git#d414e966286f2a5d3028a02701db510f1fa9bbe6"
+    "tikz-nonlocal_spin_valve": "https://github.com/evansosenko/tikz-nonlocal_spin_valve.git#v1.2",
+    "references": "https://github.com/evansosenko/references.git#d414e966286f2a5d3028a02701db510f1fa9bbe6"
   }
 }
